@@ -1,4 +1,4 @@
-package ch.demo.locationupdate
+package ch.demo.locationupdate.foreground
 
 import android.content.ComponentName
 import android.content.ServiceConnection

@@ -1,4 +1,4 @@
-package ch.demo.locationupdate
+package ch.demo.locationupdate.utils
 
 import android.content.Context
 import com.google.android.gms.common.ConnectionResult

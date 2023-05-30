@@ -1,4 +1,4 @@
-package ch.demo.locationupdate
+package ch.demo.locationupdate.foreground
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -13,6 +13,8 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.lifecycleScope
+import ch.demo.locationupdate.BuildConfig
+import ch.demo.locationupdate.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
