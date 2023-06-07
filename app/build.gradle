@@ -64,6 +64,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1"
     implementation "androidx.lifecycle:lifecycle-compiler:2.6.1"
     implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
@@ -78,4 +79,14 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:$hilt_compiler_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
     implementation "com.google.dagger:hilt-android:$hilt_version"
+
+    // Room
+    implementation 'androidx.room:room-runtime:2.4.2'
+    kapt 'androidx.room:room-compiler:2.4.2'
+
+    // Google Play
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+
+    // Preference
+    implementation 'androidx.preference:preference-ktx:1.2.0'
 }
