@@ -27,7 +27,16 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".foreground.ForegroundLocationService" android:exported="false" />
+        <service android:name=".foreground.ForegroundLocationService" android:exported="true">
+        </service>
+
+        <receiver
+            android:name=".background.LocationUpdatesBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="ch.demo.locationupdate.ACTION_PROCESS_UPDATES" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

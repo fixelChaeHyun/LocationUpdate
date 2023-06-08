@@ -13,19 +13,32 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_normal"
-        android:layout_marginLeft="@dimen/margin_normal"
         android:layout_marginTop="@dimen/margin_normal"
         android:layout_marginEnd="@dimen/margin_normal"
-        android:layout_marginRight="@dimen/margin_normal"
         android:layout_marginBottom="@dimen/margin_normal"
         android:scrollbars="vertical"
         android:textIsSelectable="true"
-        app:layout_constraintBottom_toTopOf="@+id/startOrStopLocationUpdatesButton"
+        app:layout_constraintBottom_toTopOf="@+id/deleteDatabase"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enableBackgroundLocationButton"
+        app:layout_constraintVertical_bias="0.0"
         tools:text="Outputs location in intervals" />
+
+    <Button
+        android:id="@+id/deleteDatabase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_normal"
+        android:layout_marginLeft="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_normal"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_marginBottom="@dimen/margin_normal"
+        android:text="delete"
+        app:layout_constraintBottom_toTopOf="@id/startOrStopLocationUpdatesButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/startOrStopLocationUpdatesButton"

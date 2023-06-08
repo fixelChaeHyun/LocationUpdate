@@ -27,4 +27,7 @@ interface MyLocationDao {
 
     @Insert
     fun addLocations(myLocationEntities: List<MyLocationEntity>)
+
+    @Query("DELETE FROM my_location_table")
+    fun deleteLocationTable()
 }

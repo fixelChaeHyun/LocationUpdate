@@ -51,7 +51,7 @@ class MyLocationManager private constructor(
 
         // Sets the maximum time when batched location updates are delivered.
         // Updates may be delivered sooner than this interval.
-        maxWaitTime = 30_000
+        maxWaitTime = 15_000
         priority = LocationRequest.PRIORITY_HIGH_ACCURACY
     }
 
@@ -62,6 +62,7 @@ class MyLocationManager private constructor(
      * limits on Services.
      */
     private val locationUpdatePendingIntent: PendingIntent by lazy {
+        Log.v(TAG, "create a Pending Intent to request a location")
         val intent = Intent(context, LocationUpdatesBroadcastReceiver::class.java)
         intent.action = LocationUpdatesBroadcastReceiver.ACTION_PROCESS_UPDATES
         PendingIntent.getBroadcast(context, 0, intent, (PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE))

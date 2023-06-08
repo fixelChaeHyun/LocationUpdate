@@ -44,17 +44,20 @@ class LocationUpdatesBroadcastReceiver : BroadcastReceiver() {
             LocationAvailability.extractLocationAvailability(intent)?.let { locationAvailability ->
                 if (!locationAvailability.isLocationAvailable) {
                     Log.d(TAG, "** Location services are no longer available!")
+                } else {
+                    Log.i(TAG, "** Location services are AVAILABLE NOW !!")
                 }
             }
 
             LocationResult.extractResult(intent)?.let { locationResult ->
                 val locations = locationResult.locations.mapIndexed { index, location ->
-                    if (index == 0) {
-                        Log.d(TAG, "-> locations[0] : ${location.latitude}, ${location.longitude}\n-> $location")
-                    }
+//                    if (index == 0) {
+//                        Log.d(TAG, "-> locations[0] : ${location.latitude}, ${location.longitude}\n-> $location")
+//                    }
+                    Log.d(TAG, "-> locations[$index] : ${location.latitude}, ${location.longitude}\n-> $location")
                 }
                 val last = locationResult.lastLocation
-                Log.i(TAG, "lastLocation: (${last.latitude}, ${last.longitude})")
+                Log.w(TAG, "lastLocation: (${last.latitude}, ${last.longitude})")
                 val entity = MyLocationEntity(
                     latitude = last.latitude,
                     longitude = last.longitude,
@@ -86,7 +89,6 @@ class LocationUpdatesBroadcastReceiver : BroadcastReceiver() {
     }
     companion object {
         const val ACTION_PROCESS_UPDATES =
-            "ch.demo.locationupdate.action." +
-                    "PROCESS_UPDATES"
+            "ch.demo.locationupdate.ACTION_PROCESS_UPDATES"
     }
 }

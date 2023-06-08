@@ -15,11 +15,18 @@ class LocationUpdateViewModel @Inject constructor(
     @ApplicationContext appContext: Context
 ): ViewModel() {
 
-//    private val locationRepository = LocationRepository.getInstnace(
-//        appContext,
-//        Executors.newSingleThreadExecutor()
-//    )
-//
-//    val receivingLocationUpdates: LiveData<Boolean> = locationRepository.receivingLocationUpdates
+    private val locationRepository = LocationRepository.getInstance(
+        appContext,
+        Executors.newSingleThreadExecutor()
+    )
 
+    val receivingLocationUpdates: LiveData<Boolean> = locationRepository.receivingLocationUpdates
+
+    val locationListLiveData = locationRepository.getLocations()
+
+    /** Repository 의 정확한 역할은? */
+    fun startLocationUpdates() = locationRepository.startLocationUpdates()
+    fun stopLocationUpdates() = locationRepository.stopLocationUpdates()
+
+    fun deleteDatabase() = locationRepository.deleteAllLocationInDB()
 }
