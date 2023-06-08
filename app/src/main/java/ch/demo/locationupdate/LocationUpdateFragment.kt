@@ -122,9 +122,9 @@ class LocationUpdateFragment : Fragment() {
             Log.e(TAG, "-- onPause(): Stop updating locations if ACCESS_BACKGROUND_LOCATION hasn't approved. --")
             locationUpdateViewModel.stopLocationUpdates()
         } else if (locationUpdateViewModel.receivingLocationUpdates.value == true) {
-            Log.i(TAG, "-- onPause(): It keeps to update locations. --")
+            Log.e(TAG, "-- onPause(): It keeps to update locations. --")
         } else {
-            Log.i(TAG, "-- onPause(): There is no location updates. --")
+            Log.d(TAG, "-- onPause(): There is no location updates. --")
         }
     }
 
