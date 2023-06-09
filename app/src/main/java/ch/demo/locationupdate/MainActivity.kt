@@ -2,8 +2,10 @@ package ch.demo.locationupdate
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import ch.demo.locationupdate.databinding.ActivityMainBinding
+import ch.demo.locationupdate.foreground.TestForegroundService
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -44,7 +46,17 @@ class MainActivity : AppCompatActivity(), PermissionRequestFragment.Callbacks,
 
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
 
-        if (currentFragment == null) {
+        binding.foreButton.setOnClickListener {
+            Toast.makeText(this, "Test Foreground", Toast.LENGTH_SHORT).show()
+            val fragment = ForegroundUpdateFragment.newInstance()
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit()
+        }
+
+        binding.backButton.setOnClickListener {
+            Toast.makeText(this, "Test Background", Toast.LENGTH_SHORT).show()
             val fragment = LocationUpdateFragment.newInstance()
             supportFragmentManager
                 .beginTransaction()

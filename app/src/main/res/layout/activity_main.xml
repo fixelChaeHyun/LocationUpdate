@@ -6,14 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_container">
+        <Button
+            android:id="@+id/foreButton"
+            android:text="FORE"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="4dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:text="Back"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="4dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayout"
         tools:context=".ui.MainActivity">
     </FrameLayout>
 
