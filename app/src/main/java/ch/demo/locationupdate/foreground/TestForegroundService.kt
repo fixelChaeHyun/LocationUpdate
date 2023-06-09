@@ -56,6 +56,7 @@ class TestForegroundService: Service() {
     }
 
     private fun startLocationService() {
+        Log.e(TAG, " -- startLocationService() --")
         val channelId = "location_notification_channel"
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -114,6 +115,10 @@ class TestForegroundService: Service() {
     }
 
     private fun stopLocationService() {
+        Log.e(TAG, " -- stopLocationService() --")
         LocationServices.getFusedLocationProviderClient(this).removeLocationUpdates(mLocationCallback)
+        stopSelf()
     }
+
+
 }

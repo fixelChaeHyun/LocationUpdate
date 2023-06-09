@@ -111,6 +111,7 @@ class ForegroundUpdateFragment: Fragment() {
             val intent = Intent(requireActivity().applicationContext, TestForegroundService::class.java)
             intent.action = Constants.ACTION_START_LOCATION_SERVICE
             requireActivity().startService(intent)
+//            requireActivity().startForegroundService(intent)
             Toast.makeText(requireContext(), "Location service started", Toast.LENGTH_SHORT).show()
         }
     }
@@ -120,6 +121,8 @@ class ForegroundUpdateFragment: Fragment() {
             val intent = Intent(requireActivity().applicationContext, TestForegroundService::class.java)
             intent.action = Constants.ACTION_STOP_LOCATION_SERVICE
             requireActivity().startService(intent)
+//            requireActivity().stopService(intent)
+//            requireActivity().startForegroundService(intent)
             Toast.makeText(requireContext(), "Location service stopped", Toast.LENGTH_SHORT).show()
         }
     }
